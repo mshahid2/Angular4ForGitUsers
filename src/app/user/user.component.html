@@ -1,0 +1,8 @@
+<div *ngIf="userDetail">
+  <img [src]="userDetail.avatar_url" alt="">
+  <h3>Login id :{{userDetail.login}}</h3>
+  <h3>Name : {{userDetail.name}}</h3>
+  <h3>Email : {{userDetail.email}}</h3>
+  <h3>Location : {{userDetail.location}}</h3>
+  <h3>Followers : {{userDetail.followers}}</h3>
+</div>

@@ -1,0 +1,13 @@
+<div class="button-row">
+  <input type="text" name="" value="" (keyup)="captureSearchContent($event)">
+  <button class="btn btn-primary" (click)="getUser()" type="">Searh User</button>
+</div>
+<ol *ngIf="users">
+  <div class="card example-card" *ngFor="let user of users.items" style="width: 20rem;">
+    <img class="card-img-top profile-img" [src]="user.avatar_url">
+    <div class="card-block">
+      <h4 class="card-title"></h4>
+      <a class="btn btn-info" (click)="showUserDetail(user)">{{user.login}}</a>
+    </div>
+  </div>
+</ol>
