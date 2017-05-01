@@ -1,13 +1,32 @@
-<div class="button-row">
-  <input type="text" name="" value="" (keyup)="captureSearchContent($event)">
+<div class="row" style="width:100%">
+<div class="col-md-3 text-center">&nbsp;</div>
+<div class="col-md-6 text-center">
+  <input type="text" name="" value="" class="form-control" style="margin:20px" (keyup)="captureSearchContent($event)">
   <button class="btn btn-primary" (click)="getUser()" type="">Searh User</button>
 </div>
-<ol *ngIf="users">
-  <div class="card example-card" *ngFor="let user of users.items" style="width: 20rem;">
-    <img class="card-img-top profile-img" [src]="user.avatar_url">
-    <div class="card-block">
-      <h4 class="card-title"></h4>
-      <a class="btn btn-info" (click)="showUserDetail(user)">{{user.login}}</a>
+<div class="col-md-3 text-center">&nbsp;</div>
+</div>
+
+<div Class="centerCards" style="margin:30px" *ngIf="users">
+  <!--Card-->
+<div class="card testimonial-card example-card" *ngFor="let user of users.items" >
+
+    <!--Bacground color-->
+    <div class="card-up default-color-dark">
     </div>
-  </div>
-</ol>
+
+    <!--Avatar-->
+    <div class="avatar"><img [src]="user.avatar_url" class="rounded-circle img-responsive">
+    </div>
+
+    <div class="card-block">
+        <!--Name-->
+        <h4 class="card-title">{{user.login}}</h4>
+        <hr>
+        <!--Quotation-->
+        <a class="btn btn-info" (click)="showUserDetail(user)">Details</a>
+    </div>
+
+</div>
+</div>
+<!--/.Card-->

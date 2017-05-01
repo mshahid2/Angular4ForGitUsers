@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SearchService } from '../services/search.service';
 import { Constants } from '../constants';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user',
@@ -14,7 +15,8 @@ export class UserComponent implements OnInit
 {
   public userDetail;
   public userId;
-  constructor(private searchService: SearchService, private activatedRoute: ActivatedRoute, private constants: Constants) { }
+  constructor(private searchService: SearchService, private activatedRoute: ActivatedRoute, private constants: Constants,
+  private location:Location) { }
 
   ngOnInit() 
   {
@@ -27,6 +29,11 @@ export class UserComponent implements OnInit
         return res;
       }
     );
+  }
+  
+  cancel()
+  {
+    this.location.back();
   }
 
 }
