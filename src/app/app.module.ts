@@ -8,12 +8,14 @@ import { SearchComponent } from './search/search.component';
 import { appRoutes } from './app.routes';
 import { RouterModule} from '@angular/router';
 import { UserComponent } from './user/user.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    UserComponent
+    UserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
