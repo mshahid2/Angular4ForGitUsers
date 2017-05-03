@@ -12,22 +12,19 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   user: any = {};
-
+  isUserLoggedIn: boolean = false;
   constructor(private authenticationService: AuthenticationService, private constants: Constants,
-  private router: Router) { }
+    private router: Router) { }
 
   captureLoginDetail() {
     const userName = this.user.Email;
     const password = this.user.Password;
-    console.log("user" + userName);
-    console.log("user" + password);
     const URL = this.constants.authenticateURL + userName + "/";
-    console.log('URL' + URL);
     this.authenticationService.validateUserinDB(URL).subscribe(
-      res => 
-      {
+      res => {
         const result = res;
         localStorage.setItem('id_token', result.id);
+        this.isUserLoggedIn = true;
         this.redirect();
         return result;
       }
@@ -36,7 +33,6 @@ export class LoginComponent implements OnInit {
   }
 
   redirect() {
-    console.log("Redirecting to search");
     this.router.navigate(["/search"]);
   }
 

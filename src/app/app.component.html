@@ -1,10 +1,13 @@
 <div class="text-center">
-  <h1 >
-  {{title}}
-</h1>
-<img src="/assets/git.png" alt="">
+  <div class="row">
+    <div class="col-md-9 text-center">&nbsp;</div>
+    <div class="col-md-3 text-center">
+      <app-logout></app-logout>
+    </div>
+    <h1>
+      {{title}}
+    </h1>
+  </div>
+  <img src="/assets/git.png" alt="">
 </div>
-
-<br>
-
 <router-outlet></router-outlet>
